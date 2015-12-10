@@ -1,12 +1,6 @@
-#include <errno.h>
-#include <string.h>
+#include <stdlib.h>
 #include <mruby.h>
-#include <mruby/proc.h>
-#include <mruby/data.h>
 #include <mruby/string.h>
-#include <mruby/array.h>
-#include <mruby/class.h>
-#include <mruby/variable.h>
 
 static mrb_value
 mrb_string_crypt(mrb_state* mrb, mrb_value self) {
