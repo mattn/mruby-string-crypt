@@ -5,16 +5,13 @@
 static mrb_value
 mrb_string_crypt(mrb_state* mrb, mrb_value self) {
   extern char *crypt(const char *, const char *);
-  mrb_value str = mrb_nil_value(), ret = mrb_nil_value();
+  mrb_value str = mrb_nil_value();
   char *res;
 
   mrb_get_args(mrb, "S", &str);
   res = crypt(mrb_str_to_cstr(mrb, self), mrb_str_to_cstr(mrb, self));
-  if (res) {
-    ret = mrb_str_new_cstr(mrb, res);
-    free(res);
-  }
-  return ret;
+  if (res) return mrb_str_new_cstr(mrb, res);
+  return mrb_nil_value();
 }
 
 void
