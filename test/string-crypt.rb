@@ -1,4 +1,4 @@
 assert("String#crypt") do
-  assert_equal "foKntnEF3KSXA", "foo".crypt("bar")
+  assert_equal "ba4TuD1iozTxw", "foo".crypt("bar")
 end
 
