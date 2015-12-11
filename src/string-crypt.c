@@ -1,11 +1,11 @@
 #include <stdlib.h>
+#include <unistd.h>
 #include <mruby.h>
 #include <mruby/string.h>
 #include <pthread.h>
 
 static mrb_value
 mrb_string_crypt(mrb_state* mrb, mrb_value self) {
-  extern char *crypt(const char *, const char *);
   mrb_value str = mrb_nil_value();
   static pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
 
