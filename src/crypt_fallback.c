@@ -1,4 +1,3 @@
-#if defined(_WIN32) || defined(_WIN64)
 /*
  * Copyright (c) 1989, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -990,5 +989,4 @@ prtab(s, t, num_rows)
 	}
 	(void)printf("\n");
 }
-#endif
 #endif
