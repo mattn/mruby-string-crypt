@@ -4,9 +4,7 @@
 #include <mruby/string.h>
 #include <pthread.h>
 
-#if defined(_WIN32) || defined(_WIN64)
 extern char *crypt(const char *, const char *);
-#endif
 
 static mrb_value
 mrb_string_crypt(mrb_state* mrb, mrb_value self) {
