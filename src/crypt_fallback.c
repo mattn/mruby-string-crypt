@@ -46,6 +46,9 @@ static char sccsid[] = "@(#)crypt.c	8.1 (Berkeley) 6/4/93";
 #define _PASSWORD_EFMT1 '_'
 #endif
 
+#define __STDC_LIMIT_MACROS
+#include <stdint.h>
+
 /*
  * UNIX password, and DES, encryption.
  * By Tom Truscott, trt@rti.rti.org,
@@ -83,7 +86,7 @@ static char sccsid[] = "@(#)crypt.c	8.1 (Berkeley) 6/4/93";
  * define "LONG_IS_32_BITS" only if sizeof(long)==4.
  * This avoids use of bit fields (your compiler may be sloppy with them).
  */
-#if !defined(cray)
+#if !defined(cray) && LONG_MAX == INT32_MAX
 #define	LONG_IS_32_BITS
 #endif
 
